@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Importacion del modulo de taggeo -->
-  <script type="module" src="googleAnal.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+  <script type="module">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JE6BZ7SFWS');
+
+    document.getElementsByClassName("Page-header-drawer timerInjected")[0].addEventListener('click',function () {
+      console.log("click");
+      gtag('event', 'click', {
+        'widget': 'contador'
+      });
+    });
+  </script>
+
   <style>
     .worldCupTimer {
       background: #690006;
