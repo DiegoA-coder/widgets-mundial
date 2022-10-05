@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Importacion del modulo de taggeo -->
+  <script type="module" src="googleAnal.js"></script>
+  <style>
+    .worldCupTimer {
+      background: #690006;
+      box-sizing: border-box;
+      color: #E11F53;
+      display: block;
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      line-height: 1;
+      margin-top: 0;
+      max-width: 368px;
+      min-width: 100%;
+      padding: 8px 10px;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      width: 100%;
+    }
+
+    .worldCupTimer,
+    .worldCupTimer_counter {
+      align-content: stretch;
+      align-items: center;
+      display: inline-flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+    }
+
+    .worldCupTimer_logo {
+      border-right: 1px solid #A11727;
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      padding: 0 15px 0 0;
+      max-width: 120px;
+      width: 28vw;
+    }
+
+    .worldCupTimer_clock,
+    .worldCupTimer_legend,
+    .worldCupTimer_logo {
+      margin-right: 2vw;
+    }
+
+    .worldCupTimer_logo img {
+      height: auto;
+      left: -20%;
+      position: relative;
+      transform: scale(1.28);
+      transform-origin: 60% 0;
+      width: 125%;
+    }
+
+    .worldCupTimer_legend-txt {
+      color: #c29c91;
+      font-size: 1.4em;
+      font-weight: bold;
+    }
+
+    .worldCupTimer_counter {
+      flex: 0 0 auto;
+    }
+
+    .worldCupTimer_clock {
+      text-align: center;
+    }
+
+    .worldCupTimer_clock:last-child {
+      margin-right: 0;
+    }
+
+    .worldCupTimer_clock-num {
+      color: #fff;
+      font-size: 25px;
+      font-weight: bold;
+      line-height: 0.8;
+      margin-bottom: 2px;
+    }
+
+    .worldCupTimer_clock-txt {
+      color: #c29c91;
+      font-size: 15px;
+      font-weight: lighter;
+    }
+
+    .worldCupTimer_logo {
+      border-right: 1px solid #ffffff;
+      max-width: 205px;
+    }
+
+    .worldCupTimer_clock span,
+    .worldCupTimer.zeroed .worldCupTimer_logo .worldCupTimer_logo-mobile {
+      display: block;
+    }
+
+    .Page-header-drawer.timerInjected {
+      border-bottom: 0;
+    }
+
+    .Page-header-drawer.timerInjected .MainNavigation-drawer {
+      top: 100%;
+    }
+
+    .worldCupTimer:before {
+      border-radius: 5px;
+      content: '';
+      height: calc(100% - 6px);
+      left: 5px;
+      position: absolute;
+      top: 3px;
+      width: calc(100% - 10px);
+      z-index: 0;
+    }
+
+    .worldCupTimer_counter,
+    .worldCupTimer_logo {
+      position: relative;
+      z-index: 1;
+    }
+
+    .worldCupTimer_clock.separator {
+      align-self: flex-start;
+    }
+  </style>
+</head>
+<body>
+<header class="Page-header">
+  <div class="Page-header-drawer" >
+    <div class="Navbar-container">
+      <div class="MainNavigation-icons">
+        <div class="MainNavigation-socialMedia-icons"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    const SETTINGS = {
+      active: true,
+      countdownDate: 1669024800,
+      injectionTargetDesktop: document.querySelector('.MainNavigation-socialMedia-icons'),
+      injectionTargetMobile: document.querySelector('.Page-header-drawer'),
+      injectionTargetParent: document.querySelector('.Page-header-drawer'),
+      sectionLink: 'https://www.tvazteca.com/aztecadeportes/',
+      timerId: 'worldCupTimer'
+    };
+
+
+    class AzCountdown {
+      constructor(el, settings) {
+        this.el = el;
+        this.settings = Object.assign({}, SETTINGS, settings);
+        this.init();
+      }
+
+      init() {
+        if(this.settings.active === true) {
+          this.injectTimer();
+          this.events();
+        }
+      }
+
+      injectButton() {
+        let timerId = this.settings.timerId;
+        let counterModel = `
+              <a  class="worldCupTimer zeroed" id="${timerId}">
+                <div class="worldCupTimer_logo">
+                  <img class="worldCupTimer_logo-mobile" style="margin: 0 auto; width: 50%; left: 0;"
+                    src="http://tv-azteca-brightspot.s3.amazonaws.com/ee/c8/8f9a1f35458fbd153128a63026d1/logocontadorverwhite.png"
+                    alt="Copa del Mundo 2022" />
+                </div>
+              </a>`;
+        let injectionTargetParent = this.settings.injectionTargetParent;
+        let windowWidth = window.innerWidth;
+        let desktopLimit = 992;
+        let injectionTarget = window.innerWidth < desktopLimit ? this.settings.injectionTargetMobile : this.settings.injectionTargetDesktop;
+
+        if(injectionTarget) {
+          if(injectionTargetParent)
+            injectionTargetParent.classList.add('timerInjected');
+          injectionTarget.insertAdjacentHTML('beforeend', counterModel)
+        }
+      }
+
+      injectTimer() {
+        let countdownDate = this.settings.countdownDate;
+        let currentTime = new Date().getTime();
+        if(currentTime <= countdownDate * 1000) {
+          let timerId = this.settings.timerId
+          let counterModel =
+                  `<a  class="worldCupTimer precount" id="${timerId}">
+                    <div class="worldCupTimer_logo">
+                      <img src="http://tv-azteca-brightspot.s3.amazonaws.com/ee/c8/8f9a1f35458fbd153128a63026d1/logocontadorverwhite.png" alt="Copa del Mundo 2022" />
+                    </div>
+                    <div class="worldCupTimer_counter">
+                      <div class="worldCupTimer_legend">
+                        <span class="worldCupTimer_legend-txt">Faltan:</span>
+                      </div>
+                      <div class="worldCupTimer_clock">
+                        <span class="worldCupTimer_clock-num days">00</span>
+                        <span class="worldCupTimer_clock-txt">d&iacute;as</span>
+                      </div>
+                      <div class="worldCupTimer_clock separator">
+                        <span class="worldCupTimer_clock-num">:</span>
+                      </div>
+                      <div class="worldCupTimer_clock">
+                        <span class="worldCupTimer_clock-num hrs">00</span>
+                        <span class="worldCupTimer_clock-txt">hrs</span>
+                      </div>
+                      <div class="worldCupTimer_clock separator">
+                        <span class="worldCupTimer_clock-num">:</span>
+                      </div>
+                      <div class="worldCupTimer_clock">
+                        <span class="worldCupTimer_clock-num min">00</span><span class="worldCupTimer_clock-txt">min</span>
+                      </div>
+                      <div class="worldCupTimer_clock separator">
+                        <span class="worldCupTimer_clock-num">:</span>
+                      </div>
+                      <div class="worldCupTimer_clock">
+                        <span class="worldCupTimer_clock-num sec">00</span><span class="worldCupTimer_clock-txt">seg</span>
+                      </div>
+                    </div>
+                  </a>`;
+
+          let injectionTargetParent = this.settings.injectionTargetParent;
+          let desktopLimit = 992;
+          let injectionTarget = window.innerWidth < desktopLimit ? this.settings.injectionTargetMobile : this.settings.injectionTargetDesktop;
+          let windowWidth = window.innerWidth;
+
+          if(injectionTarget) {
+            if(injectionTargetParent)
+              injectionTargetParent.classList.add('timerInjected');
+            injectionTarget.insertAdjacentHTML('beforeend', counterModel);
+
+            window.countInterval = setInterval(() => {
+              let timerElement = document.getElementById(timerId);
+              let now = new Date().getTime();
+              let timeDiff = countdownDate * 1000 - now;
+              let days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+              let hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              let minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+              let seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+              let daysContainer = timerElement.querySelector('.days');
+              let hrsContainer = timerElement.querySelector('.hrs');
+              let minContainer = timerElement.querySelector('.min');
+              let secContainer = timerElement.querySelector('.sec');
+
+              if(timeDiff >= 0) {
+                timerElement.classList.remove('precount');
+                daysContainer.innerHTML = ('0' + days).slice(-2);
+                hrsContainer.innerHTML = ('0' + hours).slice(-2);
+                minContainer.innerHTML = ('0' + minutes).slice(-2);
+                secContainer.innerHTML = ('0' + seconds).slice(-2);
+              } else {
+                if(timerElement)
+                  timerElement.remove()
+                clearInterval(window.countInterval);
+                this.injectButton();
+              }
+            }, 1000);
+          }
+        } else this.injectButton()
+      }
+
+      destroyTimer(rebuild = false) {
+        let injectionTargetParent = this.settings.injectionTargetParent;
+        let timer = document.getElementById(this.settings.timerId);
+
+        if(window.countInterval)
+          clearInterval(window.countInterval);
+        if(injectionTargetParent)
+          injectionTargetParent.classList.remove('timerInjected');
+        if(timer)
+          timer.remove();
+        if(rebuild)
+          this.injectTimer();
+      }
+
+      events() {
+        let _this = this;
+        let initialWidth = window.innerWidth;
+
+        window.addEventListener('resize', function () {
+          if(resizeTO)
+            clearTimeout(resizeTO);
+          var resizeTO = setTimeout(function () {
+            if(initialWidth !== this.innerWidth) {
+              initialWidth = this.innerWidth;
+              _this.destroyTimer(true);
+            }
+          }, 500, _this);
+        });
+
+        let mql = window.matchMedia('(orientation: portrait)');
+        let prevOrientation = mql.matches ? 'portrait' : 'landscape';
+        mql.addListener(function(m) {
+          if(initialWidth == window.innerWidth)
+            return;
+          if(m.matches && prevOrientation === 'landscape')
+            prevOrientation = 'portrait'
+          else if(prevOrientation === 'portrait')
+            prevOrientation = 'landscape';
+          _this.destroyTimer(true)
+        });
+      }
+    }
+    new AzCountdown();
+  })();
+</script>
+</body>
+</html>
