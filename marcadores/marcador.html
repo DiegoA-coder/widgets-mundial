@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 <head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script type="module">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JE6BZ7SFWS');
+
+      const recordEvent = (className, idEvent) => {
+        document.getElementsByClassName(className)[0].addEventListener('click',() => {
+          gtag('event', 'click', {
+            'widget': idEvent,
+          });
+        });
+      }
+
+      recordEvent("posiciones-tab ow-tabs-item", "tab-grupos");
+      recordEvent("calendario-tab ow-tabs-item", "tab-calendario");
+      recordEvent("goleadores-tab ow-tabs-item", "tab-goleadores");
+    </script>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JE6BZ7SFWS"></script>
     <script type="module">
       window.dataLayer = window.dataLayer || [];
@@ -29,8 +51,6 @@
 
 
     </script>
-
-
     <meta charset="utf-8">
     <meta meta name="viewport" content="width=device-width, user-scalable=no" />
     <title></title>

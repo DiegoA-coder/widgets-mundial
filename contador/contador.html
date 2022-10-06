@@ -9,12 +9,15 @@
     gtag('js', new Date());
     gtag('config', 'G-JE6BZ7SFWS');
 
-    document.getElementsByClassName("Page-header-drawer timerInjected")[0].addEventListener('click',function () {
-      console.log("click");
-      gtag('event', 'click', {
-        'widget': 'contador'
+    const recordEvent = (className, idEvent) => {
+      document.getElementsByClassName(className)[0].addEventListener('click',() => {
+        gtag('event', 'click', {
+          'widget': idEvent,
+        });
       });
-    });
+    }
+
+    recordEvent("Page-header-drawer timerInjected", "contador");
   </script>
 
   <style>
