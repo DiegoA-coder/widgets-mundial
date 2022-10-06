@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JE6BZ7SFWS"></script>
+    <script type="module">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-JE6BZ7SFWS');
+
+      document.getElementsByClassName("calendario-tab ow-tabs-item")[0].addEventListener('click',function () {
+        console.log("click grupos");
+        gtag('event', 'click', {
+          'widget': 'resultados',
+          'event_category': 'tab',
+          'event_label': 'grupos'
+        });
+      });
+
+      document.getElementsByClassName("navbar-toggler-icon bg-color02")[0].addEventListener('click',function () {
+        console.log("click ver mas");
+        gtag('event', 'click', {
+          'widget': 'resultados',
+          'event_category': 'tab',
+          'event_label': 'grupos'
+        });
+      });
+
+
+    </script>
+
+
+    <meta charset="utf-8">
+    <meta meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <style type="text/css">
+        body {
+            overflow: hidden;
+        }
+        p {
+            margin: 0;
+        }
+
+        span {
+            display: block;
+        }
+
+        .ow-container {
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .ow-tabs {
+            background: #39060D;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .ow-content-info {
+            background-color: #eaeaea;
+            height: 380px;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+
+        .ow-wrap {
+            overflow: hidden;
+        }
+
+        .ow-tabs-item {
+            display: inline;
+            float: left;
+            width: 33.33339%;
+        }
+
+        .ow-tabs-item a {
+            border-radius: 2px;
+            color: #ffffff;
+            display: block;
+            float: left;
+            overflow: hidden;
+            padding: 10px 0;
+            text-align: center;
+            text-decoration: none;
+            transition: all linear 400ms;
+            width: 100%;
+        }
+
+        .ow-tabs-item a:hover,
+        .ow-tabs-item.active {
+            background-color: #871c23;
+        }
+
+        .ow-tabs-item img {
+            height: 22px;
+            margin-bottom: 5px;
+            width: 22px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .ow-tabs-item a {
+                padding: 10px 0;
+            }
+
+            .ow-tabs-item img {
+                margin-bottom: 0;
+            }
+        }
+
+        .Opta h2 .Opta-Logo {
+            display: none;
+        }
+
+        .Opta>.Opta_W {
+            margin: 0;
+        }
+
+        .Opta .Opta-H2,
+        .Opta h2 {
+            background: #871c23;
+        }
+
+        .Opta .Opta-Tabs .Opta-Nav>ul.Opta-Overflowed,
+        .Opta .Opta-Tabs .Opta-Nav>ul.Opta-Overflowed:hover,
+        .Opta .Opta-Nav li.Opta-On a {
+            background-color: #3180dc;
+        }
+
+        .Opta .Opta-Tabs .Opta-Nav>ul.Opta-Overflowed:hover,
+        .Opta .Opta-Nav li.Opta-On a {
+            background-color: #0495ce;
+        }
+
+        .Opta a {
+            color: #000000;
+        }
+
+        iframe {
+            border: 0;
+        }
+
+        .posiciones-tab > a > p > span > img {
+            filter: invert(1);
+        }
+    </style>
+</head>
+<body cz-shortcut-listen="true">
+<div class="ow-container">
+    <div class="ow-wrap">
+        <div class="ow-tabs" id="ow-tabs">
+            <div class="posiciones-tab ow-tabs-item" onclick="event.preventDefault(); openCard(event, 'Posiciones')" id="defaultOpen">
+                <a href="#" class="ow-tabs-a">
+                    <p>
+                  <span>
+                    <img src="data:image/png;base64,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"/>
+                  </span>
+                    </p>
+                    <p>Grupos</p>
+                </a>
+            </div>
+            <div class="calendario-tab ow-tabs-item" onclick="event.preventDefault(); openCard(event, 'Calendario')">
+                <a href="#" class="ow-tabs-a">
+                    <p>
+                  <span>
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDQ4MCA0ODAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggZD0iTTQ0OCw0OGgtNTZWOGMwLTQuNDE4LTMuNTgyLTgtOC04aC02NGMtNC40MTgsMC04LDMuNTgyLTgsOHY0MEgxNjhWOGMwLTQuNDE4LTMuNTgyLTgtOC04SDk2Yy00LjQxOCwwLTgsMy41ODItOCw4djQwSDMyICAgIGMtNC40MTgsMC04LDMuNTgyLTgsOHY0MTZjMCw0LjQxOCwzLjU4Miw4LDgsOGg0MTZjNC40MTgsMCw4LTMuNTgyLDgtOFY1NkM0NTYsNTEuNTgyLDQ1Mi40MTgsNDgsNDQ4LDQ4eiBNMzI4LDE2aDQ4djgwaC00OFYxNnogICAgIE0xMDQsMTZoNDh2ODBoLTQ4VjE2eiBNNDQwLDQ2NEg0MFYxNjBoNDAwVjQ2NHogTTQ0MCwxNDRINDBWNjRoNDh2NDBjMCw0LjQxOCwzLjU4Miw4LDgsOGg2NGM0LjQxOCwwLDgtMy41ODIsOC04VjY0aDE0NHY0MCAgICBjMCw0LjQxOCwzLjU4Miw4LDgsOGg2NGM0LjQxOCwwLDgtMy41ODIsOC04VjY0aDQ4VjE0NHoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggZD0iTTM4NCwyMDhIOTZjLTQuNDE4LDAtOCwzLjU4Mi04LDh2MTkyYzAsNC40MTgsMy41ODIsOCw4LDhoMjg4YzQuNDE4LDAsOC0zLjU4Miw4LThWMjE2QzM5MiwyMTEuNTgyLDM4OC40MTgsMjA4LDM4NCwyMDh6ICAgICBNMTYwLDQwMGgtNTZ2LTQ4aDU2VjQwMHogTTE2MCwzMzZoLTU2di00OGg1NlYzMzZ6IE0xNjAsMjcyaC01NnYtNDhoNTZWMjcyeiBNMjMyLDQwMGgtNTZ2LTQ4aDU2VjQwMHogTTIzMiwzMzZoLTU2di00OGg1NlYzMzZ6ICAgICBNMjMyLDI3MmgtNTZ2LTQ4aDU2VjI3MnogTTMwNCw0MDBoLTU2di00OGg1NlY0MDB6IE0zMDQsMzM2aC01NnYtNDhoNTZWMzM2eiBNMzA0LDI3MmgtNTZ2LTQ4aDU2VjI3MnogTTM3Niw0MDBoLTU2di00OGg1NlY0MDB6ICAgICBNMzc2LDMzNmgtNTZ2LTQ4aDU2VjMzNnogTTM3NiwyNzJoLTU2di00OGg1NlYyNzJ6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPg=="/>
+                  </span>
+                    </p>
+                    <p>Calendario</p>
+                </a>
+            </div>
+            <div class="goleadores-tab ow-tabs-item" onclick="event.preventDefault(); openCard(event, 'Goleadores')">
+                <a href="#" class="ow-tabs-a">
+                    <p>
+                  <span>
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPGc+CgkJPHBhdGggZD0iTTQzNy4wMTksNzQuOTgxQzM4OC42NjgsMjYuNjI5LDMyNC4zODEsMCwyNTYsMEMxODguMDIyLDAsMTIzLjA1MiwyNi45MSw3NC45ODQsNzQuOTc3QzI2LjYzLDEyMy4zMywwLDE4Ny42MTgsMCwyNTYgICAgYzAsMTguNTcxLDEuOTk0LDM3LjA0OSw1LjkzMyw1NS4wMzljMC45MTQsNC4xNyw1LjEzLDYuNzM0LDkuMjcxLDUuNjkzbDAuMDA2LTAuMDAyYzMuOTk2LTEuMDA1LDYuNDQtNS4wMDMsNS41Ni05LjAyOSAgICBjLTMuNjkzLTE2Ljg5NS01LjU2Mi0zNC4yNTEtNS41NjItNTEuN2MwLTQuODQ1LDAuMTU5LTkuNjY0LDAuNDQyLTE0LjQ2MWw0My4xMDktMzIuODQybDgzLjk0MywxOC45NThsMzguNjQ0LDExOC45MzQgICAgbC00MS44OTYsNzQuNTY1bC01Ni4zNzgsMi40NTljLTIyLjQ1Ni0yMy4xMzUtNDAuNDQ3LTUwLjk1MS01Mi4zMS04Mi4yODNjLTEuNDYyLTMuODYxLTUuNjk2LTUuODktOS42LTQuNTQ3ICAgIGMtNC4wMzgsMS4zODktNi4xNjksNS44NDEtNC42NTksOS44MzVDNTQuMDI5LDQ0NS44NjMsMTQ5LjI5OSw1MTIsMjU2LDUxMmM2OC4zOCwwLDEzMi42NjctMjYuNjI5LDE4MS4wMTktNzQuOTggICAgYzQ4LjA2OC00OC4wNjgsNzQuOTgtMTEzLjAzNiw3NC45ODEtMTgxLjAxNkM1MTIuMDAxLDE4Ny42MjMsNDg1LjM3MiwxMjMuMzMzLDQzNy4wMTksNzQuOTgxeiBNNDk0LjMyNiwyMjEuMzc5TDQ2My4zNzgsMTk3LjggICAgbDEzLjM5Mi0zOC4yMjhDNDg1LjM0NCwxNzkuMTg2LDQ5MS4yNTcsMTk5LjkzNSw0OTQuMzI2LDIyMS4zNzl6IE0yNTYsMTUuMjA4YzEwLjcyNywwLDIxLjM0MywwLjcxMywzMS44MDQsMi4wODRMMjU2LjAwMiw0MC40ICAgIEwyMjQuMiwxNy4yOTFDMjM0LjY2LDE1LjkyMSwyNDUuMjc0LDE1LjIwOCwyNTYsMTUuMjA4eiBNMTcuNzQ5LDIyMC44MjJjMy4wNDctMjAuOTQxLDguODE5LTQxLjIxNiwxNy4xMjItNjAuNDEybDEzLjA5OCwzNy4zOSAgICBMMTcuNzQ5LDIyMC44MjJ6IE02Mi43NTUsMTk0LjAwOWwtMTguNTEyLTUyLjg0NGMxMC45NDYtMjAuMTE5LDI0Ljg0My0zOC43ODIsNDEuNDkxLTU1LjQzMSAgICBjMzIuODA1LTMyLjgwNSw3My40MDktNTQuOTc0LDExNy42MjktNjQuNzg1bDQ1LjAzMywzMi43MjJ2ODUuNDg5bC0xMDEuNjEzLDczLjgyNkw2Mi43NTUsMTk0LjAwOXogTTE1Ny41MDMsMjIzLjk5NkwyNTYsMTUyLjQzNCAgICBsMzguMTM1LDI3LjcwM2MzLjM5OCwyLjQ2OCw4LjE1MywxLjcxNCwxMC42MjEtMS42ODNzMS43MTQtOC4xNTMtMS42ODMtMTAuNjIxbC0zOS40Ny0yOC42NzJWNTMuNjc2bDQ1LjAzNy0zMi43MjUgICAgYzQ0LjIxOSw5LjgxMiw4NC44MjIsMzEuOTgsMTE3LjYyNSw2NC43ODRjMTYuNDQ4LDE2LjQ0OCwzMC4yMDgsMzQuODY1LDQxLjA5Myw1NC43MDdsLTE4Ljc2Nyw1My41NjhsLTgzLjUzLDE4Ljg2NSAgICBsLTMzLjQxLTI0LjI3NGMtMy4zOTctMi40NjktOC4xNTItMS43MTUtMTAuNjIxLDEuNjgyYy0yLjQ2OSwzLjM5Ny0xLjcxNSw4LjE1MiwxLjY4MiwxMC42MjFsMzEuNzg0LDIzLjA5M2wtMzcuNjIyLDExNS43OSAgICBIMTk1LjEyNkwxNTcuNTAzLDIyMy45OTZ6IE05OC40ODQsNDM4LjE2NWw0MC4zMjgtMS43NTlsMTMuODcsMzcuMTA1QzEzMy4wOTIsNDY0LjIwNCwxMTQuODU4LDQ1Mi4zMDUsOTguNDg0LDQzOC4xNjV6ICAgICBNMjU2LDQ5Ni43OTJjLTI5LjI4OCwwLTU3LjY1OC01LjMwNS04NC4wMzQtMTUuMTI4bC0xOS42MDQtNTIuNDQ0bDQxLjcwNC03NC4yMjZoMTIzLjIxMWw0MS43MDUsNzQuMjI1bC0xOS43NTcsNTIuODUyICAgIEMzMTIuOTI3LDQ5MS43MzYsMjg0Ljg1NCw0OTYuNzkyLDI1Niw0OTYuNzkyeiBNMzU4LjQ2Niw0NzQuMDM3bDE0LjA2Ny0zNy42MzNsNDAuOTI3LDEuNzgxICAgIEMzOTYuNjcxLDQ1Mi43NCwzNzguMTgyLDQ2NC43NTYsMzU4LjQ2Niw0NzQuMDM3eiBNNDI4LjgzNiw0MjMuNjMzbC01Ni45MzktMi40NzdsLTQxLjQ4Mi03My44MjhsMzguOTM1LTExOS44M2w4My4yMzgtMTguNzk5ICAgIGw0My43OTQsMzMuMzY1YzAuMjYzLDQuNjIzLDAuNDEsOS4yNjksMC40MSwxMy45MzhDNDk2Ljc5MiwzMTkuMDg5LDQ3Mi42NzksMzc4LjQ2Myw0MjguODM2LDQyMy42MzN6IiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+Cgk8L2c+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPg=="/>
+                  </span>
+                    </p>
+                    <p>Goleadores</p>
+                </a>
+            </div>
+        </div>
+        <div class="ow-content">
+            <div class="ow-content-info" id="Posiciones">
+                <iframe
+                        src="https://aztecastats.com.mx/html/v3/page.html?channel=deportes.futbol.mundial&lang=es_LA&theme=mundialBaz&scrolling=no&page=posiciones"
+                        width="100%" height="100%" scrolling="auto" style="width: 1px; min-width: 100%; *width: 100%;" class="posiciones-iframe">
+                </iframe>
+            </div>
+            <div class="ow-content-info" id="Calendario">
+                <iframe
+                        src="https://aztecastats.com.mx/html/v3/page.html?channel=deportes.futbol.mundial&lang=es_LA&theme=mundialBaz&scrolling=no&page=fixture"
+                        width="100%" height="100%" scrolling="auto" style="width: 1px; min-width: 100%; width: 100%;" class="calendario-iframe">
+                </iframe>
+            </div>
+            <div class="ow-content-info" id="Goleadores">
+                <iframe
+                        src="https://aztecastats.com.mx/html/v3/page.html?channel=deportes.futbol.mundial&lang=es_LA&theme=mundialBaz&scrolling=no&page=goleadores"
+                        width="100%" height="100%" scrolling="auto" style="width: 1px; min-width: 100%; *width: 100%;" class="goleadores-iframe">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://secure.widget.cloud.opta.net/v3/v3.opta-widgets.js"></script>
+<script>
+  var opta_settings = {
+    language: 'es_ES',
+    subscription_id: 'a191656b3dd6655cd4de44b19cbfec0f',
+    timezone: 'America/Mexico_City'
+  };
+  function openCard(evt, cardName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("ow-content-info");
+    for (i = 0; i < tabcontent.length; i++)
+      tabcontent[i].style.display = "none";
+    tablinks = document.getElementsByClassName("ow-tabs-item");
+    for (i = 0; i < tablinks.length; i++)
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    document.getElementById(cardName).style.display = "block";
+    evt.currentTarget.className += " active";
+    return false;
+  }
+  document.addEventListener("DOMContentLoaded", function(event) {
+    document.getElementById("defaultOpen").click();
+    $('.ow-content').css('height', $(window).height() - $('.ow-tabs').height() * 1.4);
+  });
+</script>
+</body>
+</html>
